@@ -48,10 +48,10 @@ plt.title("PCA");plt.xlabel('component1');plt.ylabel('component2');plt.colorbar(
 score=[]
 for i in range(len(features_columns)):
     pca = PCA(n_components=(i+1)) #保留2個主成分，從累積已解釋變量圖來設定
-    lr = LogisticRegression() # 创建逻辑回归对象
-    X_train_pca = pca.fit_transform(X_train) # 把原始训练集映射到主成分组成的子空间中
-    X_test_pca = pca.transform(X_test) # 把原始测试集映射到主成分组成的子空间中
-    lr.fit(X_train_pca, y_train) # 用逻辑回归拟合数据
+    lr = LogisticRegression() # 創建邏輯迴歸
+    X_train_pca = pca.fit_transform(X_train) # 把原始訓練集映射到主成分组成的子空間
+    X_test_pca = pca.transform(X_test) 
+    lr.fit(X_train_pca, y_train) 
     score.append(lr.score(X_test_pca, y_test))
 
 plt.plot(score)
