@@ -60,17 +60,3 @@ plt.xlabel("number of component")
 plt.ylabel("accuracy score")
 
 
-#=====================================================================
-
-"""
-lr = LogisticRegression() # 创建逻辑回归对象
-X_train_pca = pca.fit_transform(X_train) # 把原始训练集映射到主成分组成的子空间中
-X_test_pca = pca.transform(X_test) # 把原始测试集映射到主成分组成的子空间中
-lr.fit(X_train_pca, y_train) # 用逻辑回归拟合数据
-
-print("Accuracy Score:", lr.score(X_test_pca, y_test)) # 0.98 在测试集上的平均正确率为0.98
-
-
-
-
-"""
